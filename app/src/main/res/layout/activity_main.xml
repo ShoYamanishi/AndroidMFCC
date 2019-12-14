@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.android_mfcc.ScrollingHeatMapView
+        android:id="@+id/mfcc_heatmap_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <com.example.android_mfcc.ScrollingHeatMapView
+        android:id="@+id/fft_heatmap_view"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+</LinearLayout>
