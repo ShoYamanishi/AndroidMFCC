@@ -53,6 +53,7 @@ Native C++ with Neon SIMD intrinsics implementation.
 
 # Spectrum Visualization for Fun
 The upper part is the 26-point MFCC. The lower part is the 256-point spectrum taken from 512-point FFT.
+Plese click the thumbnails to enlarge.
 
 * <a href="doc/440Hz.png"> <img src="doc/440Hz_thumb.png" height="100"></a>
 [ 440Hz Sine ](doc/440Hz.png) : 440 Hz Sine wave with some background noise.
