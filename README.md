@@ -1,5 +1,19 @@
 # 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android all written in Java
 
+<a href="doc/440Hz.png"> <img src="doc/440Hz_thumb.png" height="100"></a>
+<a href="doc/AndroidAudio.png"> <img src="doc/AndroidAudio_thumb.png" height="100"></a>
+<a href="doc/BlahBlahBlah.png"> <img src="doc/BlahBlahBlah_thumb.png" height="100"></a>
+<a href="doc/WirSindAlleProgrammiertTimBendzko.png"> <img src="doc/WirSindAlleProgrammiertTimBendzko_thumb.png" height="100"></a>
+<a href="doc/GrandPianoSingleTonesC3andC4.png"> <img src="doc/GrandPianoSingleTonesC3andC4_thumb.png" height="100"></a>
+<a href="doc/GrandPianoCMaj9.png"> <img src="doc/GrandPianoCMaj9_thumb.png" height="100"></a>
+<a href="doc/SynthLeadSpainBEGGbDBE.png"> <img src="doc/SynthLeadSpainBEGGbDBE_thumb.png" height="100"></a>
+<a href="doc/CoryWongSlowlyJamming.png"> <img src="doc/CoryWongSlowlyJamming_thumb.png" height="100"></a>
+<a href="doc/CoryHenryNickSemrad.png"> <img src="doc/CoryHenryNickSemrad_thumb.png" height="100"></a>
+<a href="doc/JacoPortraitOfTracy.png"> <img src="doc/JacoPortraitOfTracy_thumb.png" height="100"></a>
+<a href="doc/Naturally7.png"> <img src="doc/Naturally7_thumb.png" height="100"></a>
+<a href="doc/TheoKatzmanHalfTheWay.png"> <img src="doc/TheoKatzmanHalfTheWay_thumb.png" height="100"></a>
+<a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
+
 
 # Install
 Download the contents and open with AndroidStdio, then make.
