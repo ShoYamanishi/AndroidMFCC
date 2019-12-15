@@ -103,7 +103,7 @@ The upper part is the 26-point MFCC. The lower part is the 256-point spectrum ta
 
 
 * <a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
-[ Tory Kelly ](doc/ToriKelly.png) : Tori Kelly's incredible voice visualized. (https://www.youtube.com/watch?v=Jv8IqJm6q7w)
+[ Tori Kelly ](doc/ToriKelly.png) : Tori Kelly's incredible voice visualized. (https://www.youtube.com/watch?v=Jv8IqJm6q7w)
 
 
 
