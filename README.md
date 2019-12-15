@@ -82,7 +82,7 @@ Native C++ with Neon SIMD intrinsics implementation.
 
 
 * <a href="doc/CoryWongSlowlyJamming.png"> <img src="doc/CoryWongSlowlyJamming_thumb.png" height="100"></a>
-[ Cory Wong Jamming ](doc/CoryWongSlowlyJamming.png) : Cory Wong slowly jamming with his guitar. (https://www.youtube.com/watch?v=i14pnaRzflU)
+[ Cory Wong Jamming ](doc/CoryWongSlowlyJamming.png) : Cory Wong slowly jamming with his guitar. (https://youtu.be/i14pnaRzflU?t=208)
 
 
 * <a href="doc/CoryHenryNickSemrad.png"> <img src="doc/CoryHenryNickSemrad_thumb.png" height="100"></a>
