@@ -40,9 +40,12 @@ Native C++ with Neon SIMD intrinsics implementation.
 
 # Spectrum Visualization for Fun
 
-
-
 * [440Hz Sine](doc/440Hz.png) : 440 Hz Sine wave with some background noise.
+<a href="docs/
+    <img src="docs/440Hz_thumb.png" height="90">
+</a>
+
+
 
 * ['Android audio'](doc/AndroidAudio.png) : Me saying "Android audio".
 
@@ -56,7 +59,7 @@ Native C++ with Neon SIMD intrinsics implementation.
 
 * [Synth Lead Melody](doc/SynthLeadSpainBEGGbDBE.png) : Sythe lead tracing a line of Spain by Chick Corea (B->E->G->Gb->D->B->E).
 
-* [Cory Wond Jamming](CoryWongSlowlyJamming.png) : Cory Wong slowly jamming with his guitar. (https://www.youtube.com/watch?v=i14pnaRzflU)
+* [Cory Wong Jamming](doc/CoryWongSlowlyJamming.png) : Cory Wong slowly jamming with his guitar. (https://www.youtube.com/watch?v=i14pnaRzflU)
 
 * [Cory Henry & Nick Semrad @NAMM](doc/CoryHenryNickSemrad.png) : Cory Henry and Nick Semrad playing Gospel at NAMM show. (https://www.youtube.com/watch?v=8TwhLplrFNo)
 
@@ -66,7 +69,7 @@ Native C++ with Neon SIMD intrinsics implementation.
 
 * [Vulfpeck]](doc/TheoKatzmanHalfTheWay.png) : Theo Katzman's singing voice. (https://www.youtube.com/watch?v=6HUkbf44iAA)
 
-* [Tory Kelly](doc/ToriKelly.png) : Tori Kelly's incredible voice visualized. (/Users/shoichiroyamanishi/workarea/AndroidMFCC/AndroidMFCC/)
+* [Tory Kelly](doc/ToriKelly.png) : Tori Kelly's incredible voice visualized. (https://www.youtube.com/watch?v=Jv8IqJm6q7w)
 
 
 
