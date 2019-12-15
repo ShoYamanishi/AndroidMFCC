@@ -1,4 +1,4 @@
-# 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android all written in Java
+# Real-time 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android All Written in Java
 
 <a href="doc/440Hz.png"> <img src="doc/440Hz_thumb.png" height="100"></a>
 <a href="doc/AndroidAudio.png"> <img src="doc/AndroidAudio_thumb.png" height="100"></a>
@@ -34,7 +34,7 @@ This is a study implementation as a bench-mark for a Native C++ implematation wi
 
 * Audio input 16KHz monaural linear PCM taken from AudioRecorder
 
-* Framesize 400 samples (25[ms]), Frame shift 160 samples (10[ms])
+* Frame size 400 samples (25[ms]), Frame shift 160 samples (10[ms])
 
 * Pre-emphaiss (tap 0.96)
 
