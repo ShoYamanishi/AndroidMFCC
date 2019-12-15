@@ -39,44 +39,56 @@ Native C++ with Neon SIMD intrinsics implementation.
 
 # Spectrum Visualization for Fun
 
-* <a href="doc/440Hz_thumb.png"> <img src="doc/440Hz_thumb.png" height="100"></a>[440Hz Sine](doc/440Hz.png) : 440 Hz Sine wave with some background noise.
+* <a href="doc/440Hz.png"> <img src="doc/440Hz_thumb.png" height="100"></a>
+[ 440Hz Sine ](doc/440Hz.png) : 440 Hz Sine wave with some background noise.
 
 
-* <a href="doc/AndroidAudio_thumb.png"> <img src="doc/AndroidAudio_thumb.png" height="100"></a>['Android audio'](doc/AndroidAudio.png) : Me saying "Android audio".
+* <a href="doc/AndroidAudio.png"> <img src="doc/AndroidAudio_thumb.png" height="100"></a>
+[ 'Android audio' ](doc/AndroidAudio.png) : Me saying "Android audio".
 
 
-* <a href="doc/BlahBlahBlah_thumb.png"> <img src="doc/BlahBlahBlah_thumb.png" height="100"></a>['Blah Blah Blah](doc/BlahBlahBlah.png ) : Me saying "Blah Blah Blah...".
+* <a href="doc/BlahBlahBlah.png"> <img src="doc/BlahBlahBlah_thumb.png" height="100"></a>
+[ 'Blah Blah Blah' ](doc/BlahBlahBlah.png ) : Me saying "Blah Blah Blah...".
 
 
-* <a href="doc/WirSindAlleProgrammiertTimBendzko_thumb.png"> <img src="doc/WirSindAlleProgrammiertTimBendzko_thumb.png" height="100"></a>['Wir sind alle programmiert.](doc/WirSindAlleProgrammiertTimBendzko.png) : Me saying "Wir sind alle programmiert."
+* <a href="doc/WirSindAlleProgrammiertTimBendzko.png"> <img src="doc/WirSindAlleProgrammiertTimBendzko_thumb.png" height="100"></a>
+[ 'Wir sind alle programmiert.' ](doc/WirSindAlleProgrammiertTimBendzko.png) : Me saying "Wir sind alle programmiert."
 
 
-* <a href="doc/GrandPianoSingleTonesC3andC4_thumb.png"> <img src="doc/GrandPianoSingleTonesC3andC4_thumb.png" height="100"></a>[Piano Single Tones](doc/GrandPianoSingleTonesC3andC4.png) : Grand Piano Single Tones C3 and then C4.
+* <a href="doc/GrandPianoSingleTonesC3andC4.png"> <img src="doc/GrandPianoSingleTonesC3andC4_thumb.png" height="100"></a>
+[ Piano Single Tones ](doc/GrandPianoSingleTonesC3andC4.png) : Grand Piano Single Tones C3 and then C4.
 
 
-* <a href="doc/GrandPianoCMaj9_thumb.png"> <img src="doc/GrandPianoCMaj9_thumb.png" height="100"></a>[Piano Chord](doc/GrandPianoCMaj9.png) : Grand Piano Chord C maj9
+* <a href="doc/GrandPianoCMaj9.png"> <img src="doc/GrandPianoCMaj9_thumb.png" height="100"></a>
+[ Piano Chord ](doc/GrandPianoCMaj9.png) : Grand Piano Chord C maj9
 
 
-* <a href="doc/SynthLeadSpainBEGGbDBE_thumb.png"> <img src="doc/SynthLeadSpainBEGGbDBE_thumb.png" height="100"></a>[Synth Lead Melody](doc/SynthLeadSpainBEGGbDBE.png) : Sythe lead tracing a line of Spain by Chick Corea (B->E->G->Gb->D->B->E).
+* <a href="doc/SynthLeadSpainBEGGbDBE.png"> <img src="doc/SynthLeadSpainBEGGbDBE_thumb.png" height="100"></a>
+[ Synth Lead Melody ](doc/SynthLeadSpainBEGGbDBE.png) : Sythe lead tracing a line of Spain by Chick Corea (B->E->G->Gb->D->B->E).
 
 
-* <a href="doc/CoryWongSlowlyJamming_thumb.png"> <img src="doc/CoryWongSlowlyJamming_thumb.png" height="100"></a>[Cory Wong Jamming](doc/CoryWongSlowlyJamming.png) : Cory Wong slowly jamming with his guitar. (https://www.youtube.com/watch?v=i14pnaRzflU)
+* <a href="doc/CoryWongSlowlyJamming.png"> <img src="doc/CoryWongSlowlyJamming_thumb.png" height="100"></a>
+[ Cory Wong Jamming ](doc/CoryWongSlowlyJamming.png) : Cory Wong slowly jamming with his guitar. (https://www.youtube.com/watch?v=i14pnaRzflU)
 
 
-* <a href="doc/CoryHenryNickSemrad_thumb.png"> <img src="doc/CoryHenryNickSemrad_thumb.png" height="100"></a>[Cory Henry & Nick Semrad @NAMM](doc/CoryHenryNickSemrad.png) : Cory Henry and Nick Semrad playing Gospel at NAMM show. (https://www.youtube.com/watch?v=8TwhLplrFNo)
+* <a href="doc/CoryHenryNickSemrad.png"> <img src="doc/CoryHenryNickSemrad_thumb.png" height="100"></a>
+[ Cory Henry & Nick Semrad @NAMM ](doc/CoryHenryNickSemrad.png) : Cory Henry and Nick Semrad playing Gospel at NAMM show. (https://www.youtube.com/watch?v=8TwhLplrFNo)
 
 
-* <a href="doc/JacoPortraitOfTracy_thumb.png"> <img src="doc/JacoPortraitOfTracy_thumb.png" height="100"></a>[Jaco Portrait of Tracy](doc/JacoPortraitOfTracy.png) : Tried to capture the incredible harmonics of Portrait of Tracy, but not much seen. (https://www.youtube.com/watch?v=nsZ_1mPOuyk)
+* <a href="doc/JacoPortraitOfTracy.png"> <img src="doc/JacoPortraitOfTracy_thumb.png" height="100"></a>
+[ Jaco Portrait of Tracy ](doc/JacoPortraitOfTracy.png) : Tried to capture the incredible harmonics of Portrait of Tracy, but not much seen. (https://www.youtube.com/watch?v=nsZ_1mPOuyk)
 
 
-* <a href="doc/Naturally7_thumb.png"> <img src="doc/Naturally7_thumb.png" height="100"></a>[Naturally 7 Human Voices](doc/Naturally7.png) : Successfully captured the incredible grooves/vibrato of their voices. (https://www.youtube.com/watch?v=AF-KagTq7qY)
+* <a href="doc/Naturally7.png"> <img src="doc/Naturally7_thumb.png" height="100"></a>
+[ Naturally 7 Human Voices ](doc/Naturally7.png) : Successfully captured the incredible grooves/vibrato of their voices. (https://www.youtube.com/watch?v=AF-KagTq7qY)
 
 
-* <a href="doc/TheoKatzmanHalfTheWay_thumb.png"> <img src="doc/TheoKatzmanHalfTheWay_thumb.png" height="100"></a>[Vulfpeck]](doc/TheoKatzmanHalfTheWay.png) : Theo Katzman's singing voice. (https://www.youtube.com/watch?v=6HUkbf44iAA)
+* <a href="doc/TheoKatzmanHalfTheWay.png"> <img src="doc/TheoKatzmanHalfTheWay_thumb.png" height="100"></a>
+[ Vulfpeck ](doc/TheoKatzmanHalfTheWay.png) : Theo Katzman's singing voice. (https://www.youtube.com/watch?v=6HUkbf44iAA)
 
 
-* <a href="doc/ToriKelly_thumb.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>[Tory Kelly](doc/ToriKelly.png) : Tori Kelly's incredible voice visualized. (https://www.youtube.com/watch?v=Jv8IqJm6q7w)
-
+* <a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
+[ Tory Kelly ](doc/ToriKelly.png) : Tori Kelly's incredible voice visualized. (https://www.youtube.com/watch?v=Jv8IqJm6q7w)
 
 
 
