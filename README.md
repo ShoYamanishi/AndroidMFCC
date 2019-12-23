@@ -17,6 +17,8 @@
 # Performance Figures
 The following table and figure shows the average time in seconds observed for MFCC generation per 400-sample frame.
 
+<a href="doc/performance.png"> <img src="doc/performance.png"></a>
+
 * Java : All written in Java code
  
 * C++ : All written in Native C++ with JNI interface.
@@ -43,7 +45,7 @@ The numbers are all in seconds.
 | Emulator(X86) -O3 |   0.00020     |    0.000049   |    0.000047   |
 
 
-<a href="doc/performance.png"> <img src="doc/performance.png"></a>
+
 
 
 
