@@ -1,14 +1,4 @@
-# Real-time 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android
-Three implementations for FFT & MFCC:
-
-* Java
-
-* Native C++
-
-* C++ with 4-lane NEON/SSE SIMD intrinsics for Hamming, FFT, and DCT.
-
-
-
+# Real-time 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android in Java, C++ and NEON Intrinsics
 
 <a href="doc/440Hz.png"> <img src="doc/440Hz_thumb.png" height="100"></a>
 <a href="doc/AndroidAudio.png"> <img src="doc/AndroidAudio_thumb.png" height="100"></a>
@@ -25,8 +15,36 @@ Three implementations for FFT & MFCC:
 <a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
 
 # Performance Figures
+The following table and figure shows the average time in seconds observed for MFCC generation per 400-sample frame.
+
+* Java : All written in Java code
+ 
+* C++ : All written in Native C++ with JNI interface.
+
+* C++ & NEON/SSE : Written in C++ with 4-lane NEON/SSE SIMD intrinsics for Hamming, FFT, and DCT.
+
+Conditions
+
+* Galaxy S9 -O0 : Galaxy S9 with 8-Core Snapdragon 845 with C++ compiler optimization level 0
+
+* Galaxy S9 -O3 : Galaxy S9 with 8-Core Snapdragon 845 with C++ compiler optimization level 3
+
+* Emulator (X86) -O0 : Android Emulator on a Host PC with 4-Core emulation with C++ compiler optimization level 0 
+
+* Emulator (X86) -O3 : Android Emulator on a Host PC with 4-Core emulation with C++ compiler optimization level 3
+
+The numbers are all in seconds.
+
+| Tables            | Java          |      C++      | C++ NEON SSE  |
+| ----------------- |---------------|---------------|---------------|
+| Galaxy S9 -O0     |   0.0016      |    0.0015     |    0.0011     |
+| Galaxy S9 -O3     |   0.0016      |    0.00050    |    0.00034    |
+| Emulator(X86) -O0 |   0.00020     |    0.00012    |    0.00012    |
+| Emulator(X86) -O3 |   0.00020     |    0.000049   |    0.000047   |
+
 
 <a href="doc/performance.png"> <img src="doc/performance.png"></a>
+
 
 
 
