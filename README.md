@@ -26,7 +26,7 @@ Three implementations for FFT & MFCC:
 
 # Performance Figures
 
-<a href="doc/performance.png"> <img src="doc/performance.png" height="100"></a>
+<a href="doc/performance.png"> <img src="doc/performance.png"></a>
 
 
 
