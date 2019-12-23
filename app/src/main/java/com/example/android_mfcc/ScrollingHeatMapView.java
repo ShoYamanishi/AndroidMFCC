@@ -40,7 +40,7 @@ public class ScrollingHeatMapView extends AppCompatImageView {
         canvas.save();
         super.onDraw(canvas);
 
-        double scaleRatio = (double)canvas.getWidth() / (double) mResW;
+        float scaleRatio = (float)canvas.getWidth() / (float) mResW;
 
         if ( mRender1to2 ) {
 
@@ -61,12 +61,12 @@ public class ScrollingHeatMapView extends AppCompatImageView {
             Rect rectDst1 = new Rect(
                     0,
                     0,
-                    (int) (scaleRatio * (double)(mResW - mRenderOffset)),
+                    (int) (scaleRatio * (float)(mResW - mRenderOffset)),
                     canvas.getHeight()
             );
 
             Rect rectDst2 = new Rect(
-                    (int) ( scaleRatio * (double)(mResW - mRenderOffset)),
+                    (int) ( scaleRatio * (float)(mResW - mRenderOffset)),
                     0,
                     canvas.getWidth(),
                     canvas.getHeight()
@@ -94,12 +94,12 @@ public class ScrollingHeatMapView extends AppCompatImageView {
             Rect rectDst1 = new Rect(
                     0,
                     0,
-                    (int) (scaleRatio * (double)(mResW - mRenderOffset)),
+                    (int) (scaleRatio * (float)(mResW - mRenderOffset)),
                     canvas.getHeight()
             );
 
             Rect rectDst2 = new Rect(
-                    (int) ( scaleRatio * (double)(mResW - mRenderOffset)),
+                    (int) ( scaleRatio * (float)(mResW - mRenderOffset)),
                     0,
                     canvas.getWidth(),
                     canvas.getHeight()
@@ -134,7 +134,7 @@ public class ScrollingHeatMapView extends AppCompatImageView {
 
     public void setColorType(int t) { mColorType = t; }
 
-    public void setNewColumn(double[] vec) {
+    public void setNewColumn(float[] vec) {
 
         if ( mRender1to2 ) {
 
@@ -169,7 +169,7 @@ public class ScrollingHeatMapView extends AppCompatImageView {
      * @param v : normalized value in [0.0, 1.0]
      * @return color in heat map
      */
-    int heatColor(double v) {
+    int heatColor(float v) {
         if ( mColorType == 0 ) {
             return heatColorRGB(v);
         }
@@ -179,14 +179,14 @@ public class ScrollingHeatMapView extends AppCompatImageView {
     }
 
 
-    int heatColorRGB(double v) {
+    int heatColorRGB(float v) {
         int A = 255;
         int R = 0;
         int G = 0;
         int B = 0;
 
-        double v6 = Math.max(Math.min(v, 1.0), 0.0) * 6.0;
-        //Log.i(TAG, "V:" + String.valueOf(v6));
+        float v6 = ((float)Math.max(Math.min(v, 1.0), 0.0) * 6.0f);
+
         if (0.0 <= v6 && v6 < 1.0) {
             B = (int) (v6 * 255.0);
         } else if (1.0 <= v6 && v6 < 2.0) {
@@ -207,12 +207,12 @@ public class ScrollingHeatMapView extends AppCompatImageView {
             B = (int) ((v6 - 5.0) * 255.0);
         }
         int color = (A & 0xff) << 24 | (R & 0xff) << 16 | (G & 0xff) << 8 | (B & 0xff);
-        //Log.i(TAG, "color: R" + String.valueOf(R) + " G " + String.valueOf(G) + " B " + String.valueOf(B));
+
         return color;
     }
 
 
-    int heatColorMonoColorLimeGreen(double v)
+    int heatColorMonoColorLimeGreen(float v)
     {
 
         int intensity  = (int) (max(min(v,1.0), 0.0)  * 256.0);
@@ -222,7 +222,7 @@ public class ScrollingHeatMapView extends AppCompatImageView {
         int R = 0;
 
         int color = (A & 0xff) << 24 | (R & 0xff) << 16 | (G & 0xff) << 8 | (B & 0xff);
-        //Log.i(TAG, "color: R" + String.valueOf(R) + " G " + String.valueOf(G) + " B " + String.valueOf(B));
+
         return color;
 
     }

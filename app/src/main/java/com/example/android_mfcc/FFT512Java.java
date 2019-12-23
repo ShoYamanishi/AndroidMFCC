@@ -28,9 +28,9 @@ import static java.lang.Math.sin;
  *               Chap 8: Efficient Computation of the DFT: Fast Fourier Transform Algorithms
  *
  * @remark : Note on complex value implementation
- *         a complex value is represented by a consecutive pair of doubles.
+ *         a complex value is represented by a consecutive pair of floats.
  *         i.e. an array of complex values will look like this:
- *         double C[10];  // Five complex values.
+ *         float C[10];  // Five complex values.
  *         C[0] = Re0, C[1] = Im0,
  *         C[2] = Re1, C[3] = Im1,
  *         ...
@@ -51,14 +51,14 @@ public class FFT512Java {
      * @param samples : time domain complex input sample points in (re,im) pairs
      * @return : frequency domain points in (re,im) pairs
      */
-    public double[] transform( double[] samples ) {
+    public float[] transform( float[] samples ) {
 
         return cooley_tukey_recursive( samples );
 
     }
 
 
-    private void deinterleave( double[] even, double[] odd, double[] src ) {
+    private void deinterleave( float[] even, float[] odd, float[] src ) {
 
         for (int i = 0; i < ( src.length / 4 ) ; i += 1 ) {
 
@@ -71,50 +71,50 @@ public class FFT512Java {
     }
 
 
-    private double[] cooley_tukey_recursive( double[] array_in ) {
+    private float[] cooley_tukey_recursive( float[] array_in ) {
         final int numPoints = array_in.length / 2;
 
         if ( numPoints == 1 ) {
-            double[] array_out = new double[2];
+            float[] array_out = new float[2];
             array_out[0] = array_in[0];
             array_out[1] = array_in[1];
             return array_out; // Single point
         }
 
-        double[] array_even_in = new double[ numPoints ];
-        double[] array_odd_in  = new double[ numPoints ];
+        float[] array_even_in = new float[ numPoints ];
+        float[] array_odd_in  = new float[ numPoints ];
 
         deinterleave( array_even_in, array_odd_in, array_in );
 
-        double [] array_even_out = cooley_tukey_recursive( array_even_in );
-        double [] array_odd_out  = cooley_tukey_recursive( array_odd_in  );
+        float [] array_even_out = cooley_tukey_recursive( array_even_in );
+        float [] array_odd_out  = cooley_tukey_recursive( array_odd_in  );
 
-        double [] array_out = new double[numPoints * 2];
+        float [] array_out = new float[numPoints * 2];
 
         System.arraycopy(array_even_out, 0, array_out, 0,         numPoints     );
         System.arraycopy(array_odd_out,  0, array_out, numPoints, numPoints     );
 
         // Butterfly
 
-        double[] twiddle = getTwiddleArray( numPoints );
+        float[] twiddle = getTwiddleArray( numPoints );
 
         final int halfNumPoints = numPoints / 2;
 
         for ( int i = 0; i < halfNumPoints; i++) {
 
-            final double tw_re = twiddle[ 2 * i     ];
-            final double tw_im = twiddle[ 2 * i + 1 ];
+            final float tw_re = twiddle[ 2 * i     ];
+            final float tw_im = twiddle[ 2 * i + 1 ];
 
-            final double v1_re = array_out[ 2 * i ];
-            final double v1_im = array_out[ 2 * i + 1 ];
-            final double v2_re = array_out[ 2 * (halfNumPoints + i) ];
-            final double v2_im = array_out[ 2 * (halfNumPoints + i) + 1 ];
+            final float v1_re = array_out[ 2 * i ];
+            final float v1_im = array_out[ 2 * i + 1 ];
+            final float v2_re = array_out[ 2 * (halfNumPoints + i) ];
+            final float v2_im = array_out[ 2 * (halfNumPoints + i) + 1 ];
 
             // tw * v2 = (tw_re, tw_im i) * (v2_re, v2_im i)
             //         = (tw_re * v2_re - tw_im * v2_im), (tw_re * v2_im + tw_im * v2_re ) i
 
-            final double offset_re = tw_re * v2_re - tw_im * v2_im;
-            final double offset_im = tw_re * v2_im + tw_im * v2_re;
+            final float offset_re = tw_re * v2_re - tw_im * v2_im;
+            final float offset_im = tw_re * v2_im + tw_im * v2_re;
 
             // X(k)       = F_1(k) + W^k_N * F_2(k)  : k = 0, 1, ... N/2 - 1
             // X(k + N/2) = F_1(k) - W^k_N * F_2(k)  : k = 0, 1, ... N/2 - 1
@@ -129,7 +129,7 @@ public class FFT512Java {
     }
 
 
-    private double[] getTwiddleArray( final int numPoints ) {
+    private float[] getTwiddleArray( final int numPoints ) {
 
         if      ( numPoints == 512 ) {
             return mTwiddle512;
@@ -182,17 +182,17 @@ public class FFT512Java {
     }
 
 
-    private double[] makeTwiddle( final int N ) {
+    private float[] makeTwiddle( final int N ) {
 
-        double[] tw = new double[ N ];
+        float[] tw = new float[ N ];
 
-        final double dN  = (double)N;
+        final float dN  = (float)N;
 
         for ( int k = 0; k < N / 2 ; k++ ) {
 
-            double theta = 2.0 * PI * (double)k / dN;
-            tw[2*k]   = (double)cos(theta); // re
-            tw[2*k+1] = (double)sin(theta); // im
+            float theta = -2.0f * (float)PI * (float)k / dN;
+            tw[2*k]   = (float)cos(theta); // re
+            tw[2*k+1] = (float)sin(theta); // im
 
         }
         return tw;
@@ -201,16 +201,16 @@ public class FFT512Java {
 
     // complex values in consecutive pairs for better locality
     // The suffix number indicates n (sample points) but the allocation
-    // of complext points for it is n/2, i.e. double[n]
-    private double[]   mTwiddle512;
-    private double[]   mTwiddle256;
-    private double[]   mTwiddle128;
-    private double[]   mTwiddle64;
-    private double[]   mTwiddle32;
-    private double[]   mTwiddle16;
-    private double[]   mTwiddle8;
-    private double[]   mTwiddle4;
-    private double[]   mTwiddle2;
-    private double[]   mTwiddle1;
+    // of complext points for it is n/2, i.e. float[n]
+    private float[]   mTwiddle512;
+    private float[]   mTwiddle256;
+    private float[]   mTwiddle128;
+    private float[]   mTwiddle64;
+    private float[]   mTwiddle32;
+    private float[]   mTwiddle16;
+    private float[]   mTwiddle8;
+    private float[]   mTwiddle4;
+    private float[]   mTwiddle2;
+    private float[]   mTwiddle1;
 
 }

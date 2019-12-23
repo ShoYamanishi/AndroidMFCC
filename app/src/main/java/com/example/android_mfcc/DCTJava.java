@@ -20,12 +20,11 @@ public class DCTJava {
      * @param array_in : time domain samples
      * @return : frequency domain samples
      */
-    double[] transform(double[] array_in) {
+    float[] transform(float[] array_in) {
 
-        double[] array_out = new double[mNumPoints + 1];
-
+        float[] array_out = new float[mNumPoints + 1];
         for ( int i = 0; i < mNumPoints + 1 ; i++ ) {
-            double val = 0.0;
+            float val = 0.0f;
             for ( int j = 0; j < mNumPoints; j++ ) {
 
                 val += mDCTTable[i][j] * array_in[j];
@@ -38,21 +37,21 @@ public class DCTJava {
 
     private void makeDCTTable() {
 
-        mDCTTable = new double[ mNumPoints + 1][ mNumPoints ];
+        mDCTTable = new float[ mNumPoints + 1][ mNumPoints ];
 
-        final double C = sqrt( 2.0 / mNumPoints );
+        final float C = (float)sqrt( 2.0 / ((double)mNumPoints) );
 
         for ( int i = 0; i <= mNumPoints; i++ ) {
 
             for (int j = 0; j < mNumPoints; j++ ) {
 
-                final double di = (double)i ;
-                final double dj = (double)j + 0.5 ;
-                mDCTTable[i][j] = C * cos( PI * di * dj / (double)mNumPoints );
+                final float di = (float)i ;
+                final float dj = (float)j + 0.5f ;
+                mDCTTable[i][j] = C * (float)cos( PI * di * dj / (float)mNumPoints );
             }
         }
     }
 
     private int        mNumPoints;
-    private double[][] mDCTTable;
+    private float[][] mDCTTable;
 }

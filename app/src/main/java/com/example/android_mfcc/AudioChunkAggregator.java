@@ -13,13 +13,13 @@ public class AudioChunkAggregator {
 
     public synchronized int totalNumSamples() { return mTotalNumSamples; }
 
-    public synchronized double[] getConsecutive400SamplesInDouble() {
+    public synchronized float[] getConsecutive400SamplesInfloat() {
 
         if (mTotalNumSamples < 400) {
             return null;
         }
 
-        double[] arrayOut = new double[400];
+        float[] arrayOut = new float[400];
 
         ListIterator<short[]> iter = mChunksNewToOld.listIterator(0);
         int writePos = 0;
@@ -32,7 +32,7 @@ public class AudioChunkAggregator {
             int readPos = mNextReadPosInCurChunk;
             while ( readPos < curChunk.length ) {
 
-                arrayOut[writePos] = (double)( curChunk[ readPos ] );
+                arrayOut[writePos] = (float)( curChunk[ readPos ] );
                 readPos++;
                 writePos++;
                 mTotalNumSamples--;

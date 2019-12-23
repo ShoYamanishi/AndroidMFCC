@@ -1,5 +1,7 @@
 package com.example.android_mfcc;
 
+import android.util.Log;
+
 import static java.lang.Math.PI;
 import static java.lang.Math.cos;
 
@@ -7,6 +9,10 @@ import static java.lang.Math.cos;
  *
  */
 public class HammingWindowJava {
+
+    private static final String TAG = HammingWindowJava.class.getSimpleName();
+
+    static int log_counter = 0;
 
     /** @brief constructor
      *
@@ -27,25 +33,25 @@ public class HammingWindowJava {
      * @param array_in     : input samples (frame) whose length is windowSizeSamples
      * @param preEmphTap0  : pre-emphasis coefficient usually around 0.95
      * @return             : output samples allocated whose length is outputSizeSamples.
-     *                       the length in double is twice as it is an complex-valued array.
-     *                       e.g. mOutputSizeSamples = 512 => double[1024]
+     *                       the length in float is twice as it is an complex-valued array.
+     *                       e.g. mOutputSizeSamples = 512 => float[1024]
      */
-    double[] preEmphasisHammingAndMakeComplexForFFT(double[] array_in, final double preEmphTap0 ) {
+    float[] preEmphasisHammingAndMakeComplexForFFT(float[] array_in, final float preEmphTap0 ) {
 
-        double[] array_out = new double[ mOutputSizeSamples * 2];
+        float[] array_out = new float[ mOutputSizeSamples * 2];
 
-        array_out[0] = 0.0;
-        array_out[1] = 0.0;
+        array_out[0] = 0.0f;
+        array_out[1] = 0.0f;
 
         for ( int i = 1; i < mWindowSizeSamples; i++ ) {
             array_out[2 * i    ] = mHammingWindow[i] * ( array_in[i]  - preEmphTap0 * array_in[i-1] );
-            array_out[2 * i + 1] = 0.0;
+            array_out[2 * i + 1] = 0.0f;
         }
 
         // Pad the rest with zeros.
         for ( int i = mWindowSizeSamples; i < mOutputSizeSamples; i++ ) {
-            array_out[ 2* i     ] = 0.0;
-            array_out[ 2* i + 1 ] = 0.0;
+            array_out[ 2* i     ] = 0.0f;
+            array_out[ 2* i + 1 ] = 0.0f;
         }
 
         return array_out;
@@ -53,14 +59,14 @@ public class HammingWindowJava {
 
     private void makeHammingWindow() {
 
-        mHammingWindow = new double[mWindowSizeSamples];
+        mHammingWindow = new float[mWindowSizeSamples];
 
         for ( int i = 0; i < mWindowSizeSamples; i++ ) {
-            mHammingWindow[i] = 0.54 - 0.46 * cos(2.0 * PI * (double)i / (double)(mWindowSizeSamples - 1));
+            mHammingWindow[i] = 0.54f - 0.46f * (float)cos(2.0 * PI * (double)i / (double)(mWindowSizeSamples - 1));
         }
     }
 
-    private int        mWindowSizeSamples;
-    private int        mOutputSizeSamples;
-    private double[]   mHammingWindow;
+    private int       mWindowSizeSamples;
+    private int       mOutputSizeSamples;
+    private float[]   mHammingWindow;
 }
