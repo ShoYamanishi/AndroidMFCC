@@ -14,7 +14,7 @@
 <a href="doc/TheoKatzmanHalfTheWay.png"> <img src="doc/TheoKatzmanHalfTheWay_thumb.png" height="100"></a>
 <a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
 
-# Performance Figures
+# Performance Comparison for 3 Implementations
 The following table and figure shows the average time in seconds observed for MFCC generation per 400-sample frame.
 
 <a href="doc/performance.png"> <img src="doc/performance.png"></a>
@@ -23,7 +23,7 @@ The following table and figure shows the average time in seconds observed for MF
  
 * C++ : All written in Native C++ with JNI interface.
 
-* C++ & NEON/SSE : Written in C++ with 4-lane NEON/SSE SIMD intrinsics for Hamming, FFT, and DCT.
+* C++ & NEON/SSE : Written in C++ with 4-lane ArmV7 NEON/SSE SIMD intrinsics for Hamming, FFT, and DCT.
 
 Conditions
 
@@ -44,9 +44,12 @@ The numbers are all in seconds.
 | Emulator(X86) -O0 |   0.00020     |    0.00012    |    0.00012    |
 | Emulator(X86) -O3 |   0.00020     |    0.000049   |    0.000047   |
 
+## Remarks
+The Java implementation works surprisingly well. On the test target, it takes 2[ms] to process one
+frame. Assuming one of the core is availalble all the time, the realtime factor is greater than 5.
 
-
-
+The author is not capable of further tuning with assembler beyond the intrinsics, 
+but further performance improvement by CPU-specific assembler-level optimization may be possible.
 
 
 
@@ -141,12 +144,26 @@ Plese click the thumbnails to enlarge.
 
 # Code
 
-Core
+## Signal Processing in Java
 
 * [HammingWindowJava](app/src/main/java/com/example/android_mfcc/HammingWindowJava.java): Pre-emphasis & Hamming for a 400-sample frame
 * [FFT512Java](app/src/main/java/com/example/android_mfcc/FFT512Java.java): 512-point Radix-2 Cooley-Tukey recursive FFT with pre-calculated Twiddle table
 * [MelFilterBanksJava](app/src/main/java/com/example/android_mfcc/MelFilterBanksJava.java): Generates MelFilterBanks log energy coefficients with Bins and precalculated table.
 * [DCTJava](app/src/main/java/com/example/android_mfcc/DCTJava.java): 26-point DCT with a pre-calculated table.
+
+## Signal Processing in C++
+All the parts related to NEON intrinsics are enclosed by `#ifdef HAVE_NEON ... #endif`.
+
+* [mfcc_impl01.cpp](app/src/main/cpp/mfcc_impl01.cpp): This file contains the following classes and some JNI glue code.
+ 
+..* `class HamminwWindow` : Pre-emphasis & Hamming for a 400-sample frame. It utiizes NEON for the float mult loop.
+
+..* `class FFT512` : 512-point Radix-2 Cooley-Tukey recursive FFT with pre-calculated Twiddle table. It utlizes NEON for the even-odd splitting and the butterfly calculations.
+
+..* `class MelFilterBanks` : Generates MelFilterBanks log energy coefficients with Bins and precalculated table. It does not utilize NEON.
+
+..* `class DCT` : 26-point DCT with a pre-calculated table. It utilizes NEON in the inner-loop of mult-add.
+
 
 Visualization
 
