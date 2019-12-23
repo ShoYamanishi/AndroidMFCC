@@ -1,4 +1,14 @@
-# Real-time 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android All Written in Java
+# Real-time 26-Point MFCC & 512-Point Radix-2 FFT Generator & Visualizer on Android
+Three implementations for FFT & MFCC:
+
+* Java
+
+* Native C++
+
+* C++ with 4-lane NEON/SSE SIMD intrinsics for Hamming, FFT, and DCT.
+
+
+
 
 <a href="doc/440Hz.png"> <img src="doc/440Hz_thumb.png" height="100"></a>
 <a href="doc/AndroidAudio.png"> <img src="doc/AndroidAudio_thumb.png" height="100"></a>
@@ -13,6 +23,11 @@
 <a href="doc/Naturally7.png"> <img src="doc/Naturally7_thumb.png" height="100"></a>
 <a href="doc/TheoKatzmanHalfTheWay.png"> <img src="doc/TheoKatzmanHalfTheWay_thumb.png" height="100"></a>
 <a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
+
+# Performance Figures
+
+<a href="doc/performance.png"> <img src="doc/performance.png" height="100"></a>
+
 
 
 # Install
@@ -36,19 +51,15 @@ This is a study implementation as a bench-mark for a Native C++ implematation wi
 
 * Frame size 400 samples (25[ms]), Frame shift 160 samples (10[ms])
 
-* Pre-emphaiss (tap 0.96)
+* Pre-emphasis (tap 0.96)
 
 * Hamming window per frame
 
 * 512-Point Radix-2 Cooley-Tukey recursive FFT
 
-* Mel Filterbank, 26 banks, top 8Khz, bottom 300Hz, with floowing at 1.0
+* Mel Filterbank, 26 banks, top 8KHz, bottom 300Hz, with flooring at 1.0
 
 * DCT into 26-point MFCC [quefrency] with DC.
-
-
-# TODO
-Native C++ with Neon SIMD intrinsics implementation.
 
 
 # Spectrum Visualization for Fun
