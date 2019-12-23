@@ -14,7 +14,7 @@
 <a href="doc/TheoKatzmanHalfTheWay.png"> <img src="doc/TheoKatzmanHalfTheWay_thumb.png" height="100"></a>
 <a href="doc/ToriKelly.png"> <img src="doc/ToriKelly_thumb.png" height="100"></a>
 
-# Performance Comparison for 3 Implementations
+# Performance Comparison of 3 Implementations
 The following table and figure shows the average time in seconds observed for MFCC generation per 400-sample frame.
 
 <a href="doc/performance.png"> <img src="doc/performance.png"></a>
@@ -25,7 +25,7 @@ The following table and figure shows the average time in seconds observed for MF
 
 * C++ & NEON/SSE : Written in C++ with 4-lane ArmV7 NEON/SSE SIMD intrinsics for Hamming, FFT, and DCT.
 
-Conditions
+## Conditions
 
 * Galaxy S9 -O0 : Galaxy S9 with 8-Core Snapdragon 845 with C++ compiler optimization level 0
 
@@ -156,13 +156,13 @@ All the parts related to NEON intrinsics are enclosed by `#ifdef HAVE_NEON ... #
 
 * [mfcc_impl01.cpp](app/src/main/cpp/mfcc_impl01.cpp): This file contains the following classes and some JNI glue code.
  
-..* `class HamminwWindow` : Pre-emphasis & Hamming for a 400-sample frame. It utiizes NEON for the float mult loop.
+  * `class HamminwWindow` : Pre-emphasis & Hamming for a 400-sample frame. It utiizes NEON for the float mult loop.
 
-..* `class FFT512` : 512-point Radix-2 Cooley-Tukey recursive FFT with pre-calculated Twiddle table. It utlizes NEON for the even-odd splitting and the butterfly calculations.
+  * `class FFT512` : 512-point Radix-2 Cooley-Tukey recursive FFT with pre-calculated Twiddle table. It utlizes NEON for the even-odd splitting and the butterfly calculations.
 
-..* `class MelFilterBanks` : Generates MelFilterBanks log energy coefficients with Bins and precalculated table. It does not utilize NEON.
+  * `class MelFilterBanks` : Generates MelFilterBanks log energy coefficients with Bins and precalculated table. It does not utilize NEON.
 
-..* `class DCT` : 26-point DCT with a pre-calculated table. It utilizes NEON in the inner-loop of mult-add.
+  * `class DCT` : 26-point DCT with a pre-calculated table. It utilizes NEON in the inner-loop of mult-add.
 
 
 Visualization
