@@ -177,7 +177,11 @@ Others
 * [AudioChunkAggregator](app/src/main/java/com/example/android_mfcc/AudioChunkAggregator.java): arranges the audio data into 400[ms] frames with 10[ms] frame shift.
 
 
+# Dependencies
 
+* [cpu_features](https://github.com/google/cpu_features) : linked to the binary to obtain processor info for convenience. Apache License.
+
+* [NEON_2_SSE](https://github.com/intel/ARM_NEON_2_x86_SSE) : used to to compile NEON intrinsics for X86 Android Emulator. It converts ARM NEON intrinsics to equivalents in Intel SSE. Intel's own license but basically distributable retaining the original copyright notice.
 
 
 # References
@@ -187,8 +191,6 @@ Others
 * "Digital signal processing" by Proakis, Manolakis 4th edition Chap 8: Efficient Computation of the DFT: Fast Fourier Transform
 
 * [Mel Frequency Cepstral Coefficient (MFCC) tutorial](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs) : Nice tutorial.
-
-
 
 * [libmfcc](https://github.com/rohithkd/libmfcc) : C-implementation.
 
