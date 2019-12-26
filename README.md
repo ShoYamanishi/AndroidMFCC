@@ -51,10 +51,14 @@ frame. Assuming one of the core is availalble all the time, the realtime factor 
 The author is not capable of further tuning with assembler beyond the intrinsics, 
 but further performance improvement by CPU-specific assembler-level optimization may be possible.
 
-
-
 # Install
-Download the contents and open with AndroidStdio, then make.
+
+1. Download the contents and open with AndroidStudio.
+
+2. Copy [`NEON_2_SSE.h`](https://github.com/intel/ARM_NEON_2_x86_SSE/blob/master/NEON_2_SSE.h) into [app/src/main/cpp/](app/src/main/cpp/).
+
+3. Build.
+
 It was tested with the following environment.
 
 * Android Studio 3.5.1
@@ -68,7 +72,7 @@ Also, try chanding RECORDING_RATE in AudioReceiver.
 
 # Description
 Originally motivated to measure the real-time performance of audio signal processing on Android devices.
-This is a study implementation as a bench-mark for a Native C++ implematation with Neon SIMD intrinsics.
+This is a study implementation as a bench-mark for a Native C++ implematation with 4-lane ARM NEON SIMD intrinsics.
 
 * Audio input 16KHz monaural linear PCM taken from AudioRecorder
 
