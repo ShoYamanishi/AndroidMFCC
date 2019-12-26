@@ -55,7 +55,8 @@ but further performance improvement by CPU-specific assembler-level optimization
 
 1. Download the contents and open with AndroidStudio.
 
-2. Copy [`NEON_2_SSE.h`](https://github.com/intel/ARM_NEON_2_x86_SSE/blob/master/NEON_2_SSE.h) into [app/src/main/cpp/](app/src/main/cpp/).
+2. Copy [`NEON_2_SSE.h`](https://github.com/intel/ARM_NEON_2_x86_SSE/blob/master/NEON_2_SSE.h) 
+from `https://github.com/intel/ARM_NEON_2_x86_SSE` into [app/src/main/cpp/](app/src/main/cpp/).
 
 3. Build.
 
